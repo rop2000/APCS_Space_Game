@@ -43,6 +43,9 @@ public class AsteroidMain extends JPanel implements Runnable, KeyListener {
 	int asteroidSplit;
 	int level;
 	private JPanel contentPane;
+	
+	//The StarPolygon class was borrowed from JShapes/star-p.com 
+	
 	StarPolygon s;
 	StarPolygon d;
 	StarPolygon f;
@@ -60,7 +63,7 @@ public class AsteroidMain extends JPanel implements Runnable, KeyListener {
 
 		lasers = new Lasers[40];
 		numberOfAsteroids = 0;
-		level = 2;
+		level = 0;
 		lives = 5;
 		score = 0;
 		time = 0; //timer things that might be used later. 
@@ -155,7 +158,7 @@ public class AsteroidMain extends JPanel implements Runnable, KeyListener {
 		}
 		gr.setColor(Color.cyan);
 		gr.setFont(ft);
-		gr.drawString("Level " + (level - 2), 20, 20);
+		gr.drawString("Level " + (level), 20, 20);
 		gr.setColor(Color.red);
 		gr.setFont(ft);
 		gr.drawString("Lives: " + lives, 440, 20);
@@ -232,9 +235,11 @@ public class AsteroidMain extends JPanel implements Runnable, KeyListener {
 			asteroids[i].move(dim.width, dim.height);
 			if (asteroids[i].shipCollision(spaceship)) {
 				if (lives == 1) {
-					level = 1; 
+					level = 0; 
 					lives = 5;
 					score = 0; 
+					System.out.println(lives);
+					
 				//	o.setVisible(true);
 				//	while(duration > 0)
 				//	{

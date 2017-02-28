@@ -120,7 +120,7 @@ AsteroidMain ast = new AsteroidMain();
 		btnNewButton_2.setBounds(570, 530, 332, 53);
 		panel.add(btnNewButton_2);
 		
-		JLabel lblByRohanParikh = new JLabel("By Rohan Parikh");
+		JLabel lblByRohanParikh = new JLabel("");
 		lblByRohanParikh.setForeground(new Color(139, 0, 0));
 		lblByRohanParikh.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblByRohanParikh.setBounds(632, 660, 208, 34);

@@ -15,6 +15,9 @@ public class Lasers {
 	 yVel=laserSpeed*Math.sin(angle)+spaceshipYVelocity;
 	 }
 
+	
+	//This code snippet is a modified version of one from a tutorial on stack overflow. Ensures that objects
+	 //loop on screen and show up equally as they cross the screen border.
 	public void move(int screenWidth, int screenHeight){
 	 lifeLeft--; 
 	

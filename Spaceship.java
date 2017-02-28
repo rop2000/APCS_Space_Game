@@ -99,7 +99,7 @@ public class Spaceship {
 			 y+=yVel;
 			 xVel*=DecayRateVelocity; 
 			 yVel*=DecayRateVelocity; 
-			 //This code snippet is a modified version of one from a tutorial. Ensures that objects
+			 //This code snippet is a modified version of one from a tutorial on stack overflow. Ensures that objects
 			 //loop on screen and show up equally as they cross the screen border.
 			 if(x<0) 
 			 x+=screenWidth; 
