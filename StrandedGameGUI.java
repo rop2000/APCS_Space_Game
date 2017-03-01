@@ -35,7 +35,7 @@ AsteroidMain ast = new AsteroidMain();
 	public StrandedGameGUI() {
 		setForeground(Color.BLACK);
 		setBackground(Color.BLACK);
-		 GraphicsEnvironment graphicsEnvironment=GraphicsEnvironment.getLocalGraphicsEnvironment();
+		 GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
 	        Rectangle maximumWindowBounds=graphicsEnvironment.getMaximumWindowBounds();
 		setBounds(100, 100, 1500, 1500);
 		contentPane = new JPanel();
@@ -66,6 +66,20 @@ AsteroidMain ast = new AsteroidMain();
 		JPanel panel_3 = new JPanel();
 		contentPane.add(panel_3, "name_164264209230791");
 		 
+		JPanel panel_4 = new JPanel();
+		panel_4.setBackground(new Color(0, 0, 0));
+		panel_4.setForeground(new Color(0, 0, 0));
+		contentPane.add(panel_4, "name_164264154886423");
+		panel_4.setLayout(null);
+		
+		JPanel panel_5 = new JPanel();
+		panel_5.setBackground(new Color(0, 0, 0));
+		panel_5.setForeground(new Color(0, 0, 0));
+		contentPane.add(panel_5, "name_164264154886423");
+		panel_5.setLayout(null);
+		
+		
+		
 		JLabel lblNewLabel = new JLabel("Stranded");
 		lblNewLabel.setForeground(SystemColor.textHighlight);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 90));
@@ -87,7 +101,6 @@ AsteroidMain ast = new AsteroidMain();
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				File f = new File("C:/Users/UltraParikh/workspace/Asteroids/src/AsteroidGame/Stranded.ser");
-				
 				getContentPane().add(ast);
 				ast.init();
 				panel.setVisible(false);
@@ -119,6 +132,81 @@ AsteroidMain ast = new AsteroidMain();
 		btnNewButton_2.setForeground(new Color(0, 0, 139));
 		btnNewButton_2.setBounds(570, 530, 332, 53);
 		panel.add(btnNewButton_2);
+		
+		JButton btnNewButton_5 = new JButton("Customize");
+		btnNewButton_5.setFont(new Font("Tahoma", Font.BOLD, 30));
+		btnNewButton_5.setBackground(new Color(51, 153, 255));
+		btnNewButton_5.setForeground(new Color(0, 0, 139));
+		btnNewButton_5.setBounds(570, 614, 332, 53);
+		panel.add(btnNewButton_5);
+		btnNewButton_5.addActionListener(new ActionListener() {	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				panel.setVisible(false);
+				panel_4.setVisible(true);
+			}
+		});
+		
+		JButton btnNewButton_6 = new JButton("Ship Color");
+		btnNewButton_6.setFont(new Font("Tahoma", Font.BOLD, 30));
+		btnNewButton_6.setBackground(new Color(220, 20, 60));
+		btnNewButton_6.setForeground(new Color(0, 0, 139));
+		btnNewButton_6.setBounds(570, 200, 332, 59);
+		panel_4.add(btnNewButton_6);
+		btnNewButton_6.addActionListener(new ActionListener() {	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				panel_4.setVisible(false);
+				panel_5.setVisible(true);
+			}
+		});
+		
+		
+		JButton btnNewButton_7 = new JButton("Red");
+		btnNewButton_7.setFont(new Font("Tahoma", Font.BOLD, 30));
+		btnNewButton_7.setBackground(new Color(220, 20, 60));
+		btnNewButton_7.setForeground(new Color(0, 0, 139));
+		btnNewButton_7.setBounds(570, 200, 332, 59);
+		panel_5.add(btnNewButton_7);
+		btnNewButton_7.addActionListener(new ActionListener() {	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ast.setShipColor(Color.red);
+			}
+		});
+		
+		JButton btnNewButton_8 = new JButton("Back");
+		btnNewButton_8.setFont(new Font("Tahoma", Font.BOLD, 30));
+		btnNewButton_8.setBackground(new Color(220, 20, 60));
+		btnNewButton_8.setForeground(new Color(0, 0, 139));
+		btnNewButton_8.setBounds(100, 750, 332, 59);
+		panel_5.add(btnNewButton_8);
+		btnNewButton_8.addActionListener(new ActionListener() {	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				panel_4.setVisible(true);
+				panel_5.setVisible(false);
+				
+			}
+		});
+		
+		JButton btnNewButton_9 = new JButton("Back");
+		btnNewButton_9.setFont(new Font("Tahoma", Font.BOLD, 30));
+		btnNewButton_9.setBackground(new Color(220, 20, 60));
+		btnNewButton_9.setForeground(new Color(0, 0, 139));
+		btnNewButton_9.setBounds(100, 750, 332, 59);
+		panel_4.add(btnNewButton_9);
+		btnNewButton_9.addActionListener(new ActionListener() {	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				panel.setVisible(true);
+				panel_4.setVisible(false);
+				
+			}
+		});
+		
+		
+		
 		
 		JLabel lblByRohanParikh = new JLabel("");
 		lblByRohanParikh.setForeground(new Color(139, 0, 0));

@@ -28,7 +28,7 @@ public class Spaceship {
 
 			public Spaceship(double x, double y, double angle, double acceleration,
 			 double DecayRateVelocity, double SpeedofRotation,
-			 int laserDelay){
+			 int laserDelay, Color c){
 			
 			 this.x=x;
 			 this.y=y;

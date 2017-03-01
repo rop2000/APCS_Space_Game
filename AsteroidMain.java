@@ -26,6 +26,7 @@ public class AsteroidMain extends JPanel implements Runnable, KeyListener {
 	Image backbuffer;
 	public Graphics gr;
 	Spaceship spaceship;
+	Color ship;
 	boolean paused;
 	Lasers[] lasers;
 	int numberOfLasers;
@@ -33,7 +34,7 @@ public class AsteroidMain extends JPanel implements Runnable, KeyListener {
 	int lives;
 	private JPanel panel_4;
 	Timer timer;
-
+	Color temp;
 	Asteroid[] asteroids;
 	int numberOfAsteroids;
 	double asteroidRadius;
@@ -69,6 +70,7 @@ public class AsteroidMain extends JPanel implements Runnable, KeyListener {
 		time = 0; //timer things that might be used later. 
 		duration = 600000; 
 		delta = 1;
+		temp = ship;
 		o = new GameOver();
 		asteroidRadius = 75;
 		minAsteroidVelocity = .5;
@@ -117,7 +119,7 @@ public class AsteroidMain extends JPanel implements Runnable, KeyListener {
 			asteroidHitsUntilBreak = 6;
 
 		}
-		spaceship = new Spaceship(700, 475, 0, .35, .98, .1, 12);
+		spaceship = new Spaceship(700, 475, 0, .35, .98, .1, 12, temp);
 		numberOfLasers = 0;
 		paused = false;
 		shooting = false;
@@ -329,6 +331,15 @@ public class AsteroidMain extends JPanel implements Runnable, KeyListener {
 
 	}
 
+	public void setShipColor(Color d)
+	{
+		
+		ship = d; 
+	}
+	
+	
+	
+	
 	public static void main(String args[]) {
 
 	}
