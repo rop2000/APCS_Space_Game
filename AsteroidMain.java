@@ -69,8 +69,8 @@ public class AsteroidMain extends JPanel implements Runnable, KeyListener {
 		score = 0;
 		time = 0; //timer things that might be used later. 
 		duration = 600000; 
-		delta = 1;
-		temp = ship;
+		delta = 1; 
+		temp = this.getShipColor();
 		o = new GameOver();
 		asteroidRadius = 75;
 		minAsteroidVelocity = .5;
@@ -334,10 +334,14 @@ public class AsteroidMain extends JPanel implements Runnable, KeyListener {
 	public void setShipColor(Color d)
 	{
 		
-		ship = d; 
+		ship = d;
 	}
 	
-	
+	public Color getShipColor()
+	{
+		return ship; 
+		
+	}
 	
 	
 	public static void main(String args[]) {

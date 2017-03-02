@@ -11,6 +11,7 @@ import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
 import javax.swing.JTabbedPane;
+
 import java.applet.*; 
 import java.awt.*;
 import java.awt.event.*;
@@ -28,7 +29,8 @@ public class StrandedGameGUI extends JFrame {
 private JPanel contentPane;
 Graphics d;		
 AsteroidMain ast = new AsteroidMain();
-
+JPanel panel_4;
+JPanel panel;
 	/**
 	 * Create the frame.
 	 */
@@ -175,6 +177,35 @@ AsteroidMain ast = new AsteroidMain();
 			}
 		});
 		
+		JButton btnNewButton_10 = new JButton("Blue");
+		btnNewButton_10.setFont(new Font("Tahoma", Font.BOLD, 30));
+		btnNewButton_10.setBackground(new Color(51, 153, 255));
+		btnNewButton_10.setForeground(new Color(0, 0, 139));
+		btnNewButton_10.setBounds(570, 350, 332, 59);
+		panel_5.add(btnNewButton_10);
+		btnNewButton_10.addActionListener(new ActionListener() {	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ast.setShipColor(Color.blue);
+			}
+		});
+		
+		JButton btnNewButton_11 = new JButton("Green");
+		btnNewButton_11.setFont(new Font("Tahoma", Font.BOLD, 30));
+		btnNewButton_11.setBackground(new Color(50, 205, 50));
+		btnNewButton_11.setForeground(new Color(0, 0, 139));
+		btnNewButton_11.setBounds(570, 500, 332, 59);
+		panel_5.add(btnNewButton_11);
+		btnNewButton_11.addActionListener(new ActionListener() {	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ast.setShipColor(Color.green);
+			}
+		});
+		
+		
+		
+		
 		JButton btnNewButton_8 = new JButton("Back");
 		btnNewButton_8.setFont(new Font("Tahoma", Font.BOLD, 30));
 		btnNewButton_8.setBackground(new Color(220, 20, 60));
@@ -294,6 +325,9 @@ AsteroidMain ast = new AsteroidMain();
 		
 		
 	}
+	
+	
+	
 		
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

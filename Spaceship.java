@@ -20,7 +20,7 @@ public class Spaceship {
 	boolean active;
 	boolean turningLeft; 
 	boolean turningRight; 
-	
+	Color d = Color.cyan;
 		
 			int[] xPts, yPts, flameXPts, flameYPts;
 			int laserDelay;
@@ -49,6 +49,7 @@ public class Spaceship {
 			 flameYPts=new int[3];
 			 this.laserDelay=laserDelay; 
 			 laserDelayLeft=0; 
+			 d = c; 
 			 }
 
 			public void draw(Graphics g){
@@ -72,7 +73,7 @@ public class Spaceship {
 			 origShipYPos[i]*Math.cos(angle)+ y+0.5); 
 			 }
 			 if(active) 
-			 g.setColor(Color.getHSBColor(99, 123, 123));
+			 g.setColor(d);
 			 else 
 			 g.setColor(Color.darkGray);
 			 g.fillPolygon(xPts,yPts,4); 
