@@ -3,6 +3,8 @@ package AsteroidGame;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Timer;
+
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class AsteroidMain extends JPanel implements Runnable, KeyListener {
@@ -89,6 +91,9 @@ public class AsteroidMain extends JPanel implements Runnable, KeyListener {
 		panel_4 = new JPanel();
 		this.add(panel_4);
 		this.add(o);
+		
+	
+		
 		endTime = 0;
 		startingTime = 0;
 		st = System.currentTimeMillis();
@@ -167,9 +172,9 @@ public class AsteroidMain extends JPanel implements Runnable, KeyListener {
 		gr.setColor(Color.GREEN);
 		gr.setFont(ft);
 		gr.drawString("Score: " + score, 860, 20);
+		gr.setColor(Color.LIGHT_GRAY);
 		g.drawImage(backbuffer, 0, 0, this);
-		
-	}
+			}
 
 	@Override
 	public void update(Graphics g) {
@@ -242,16 +247,12 @@ public class AsteroidMain extends JPanel implements Runnable, KeyListener {
 					score = 0; 
 					System.out.println(lives);
 					
-				//	o.setVisible(true);
-				//	while(duration > 0)
-				//	{
-				//	duration --;
-				//	gr.setColor(Color.RED);
-				//	gr.setFont(fn);
-				//	gr.drawString("GAME OVER", 750, 750);
-				//	}
-					// Still working on the lives. Reverts to "level -1" for
-					// some reason.
+				  
+					gr.setColor(Color.RED);
+					gr.setFont(fn);
+					gr.drawString("GAME OVER", 750, 750);
+					
+					
 					
 				} else {
 					level--;

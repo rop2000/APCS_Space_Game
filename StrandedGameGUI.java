@@ -25,7 +25,7 @@ import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder; 
 
 
-public class StrandedGameGUI extends JFrame {
+public class StrandedGameGUI extends JFrame implements KeyListener{
 private JPanel contentPane;
 Graphics d;		
 AsteroidMain ast = new AsteroidMain();
@@ -37,6 +37,12 @@ JPanel panel;
 	public StrandedGameGUI() {
 		setForeground(Color.BLACK);
 		setBackground(Color.BLACK);
+		ast.setShipColor(Color.cyan);
+		// addKeyListener(this);
+		// requestFocusInWindow();
+		// setFocusable(true);
+		// requestFocus();
+		// Escape key thign nto working yet
 		 GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
 	        Rectangle maximumWindowBounds=graphicsEnvironment.getMaximumWindowBounds();
 		setBounds(100, 100, 1500, 1500);
@@ -51,7 +57,8 @@ JPanel panel;
 		panel.setBackground(Color.BLACK);
 		contentPane.add(panel, "name_164263946698957");
 		panel.setLayout(null);
-		
+		panel.setFocusable(true);
+		panel.requestFocusInWindow();
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(0, 0, 0));
@@ -73,6 +80,9 @@ JPanel panel;
 		panel_4.setForeground(new Color(0, 0, 0));
 		contentPane.add(panel_4, "name_164264154886423");
 		panel_4.setLayout(null);
+		panel_4.setFocusable(true);
+		panel_4.requestFocusInWindow();
+		
 		
 		JPanel panel_5 = new JPanel();
 		panel_5.setBackground(new Color(0, 0, 0));
@@ -235,8 +245,7 @@ JPanel panel;
 				
 			}
 		});
-		
-		
+			
 		
 		
 		JLabel lblByRohanParikh = new JLabel("");
@@ -326,10 +335,30 @@ JPanel panel;
 		
 	}
 	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+			panel.setVisible(true);
+			panel_4.setVisible(false);
+	}
+}
+	@Override
+	public void keyReleased(KeyEvent k) {
+		if (k.getKeyCode() == KeyEvent.VK_ESCAPE) {
+			panel.setVisible(true);
+	}
+}
 	
 	
+	
+	@Override
+	public void keyTyped(KeyEvent k) {
+
+	}
+
 		
 	public static void main(String[] args) {
+		
 		EventQueue.invokeLater(new Runnable() {
 			
 			public void run() {
@@ -344,5 +373,6 @@ JPanel panel;
 			}
 			
 		});
+		
 	}
 }
