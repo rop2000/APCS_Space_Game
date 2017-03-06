@@ -16,16 +16,18 @@ import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
 
+import javax.swing.AbstractAction;
 import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
+import javax.swing.KeyStroke;
 import javax.swing.border.EmptyBorder; 
 
 
-public class StrandedGameGUI extends JFrame implements KeyListener{
+public class StrandedGameGUI extends JFrame implements ActionListener{
 private JPanel contentPane;
 Graphics d;		
 AsteroidMain ast = new AsteroidMain();
@@ -38,10 +40,6 @@ JPanel panel;
 		setForeground(Color.BLACK);
 		setBackground(Color.BLACK);
 		ast.setShipColor(Color.cyan);
-		// addKeyListener(this);
-		// requestFocusInWindow();
-		// setFocusable(true);
-		// requestFocus();
 		// Escape key thign nto working yet
 		 GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
 	        Rectangle maximumWindowBounds=graphicsEnvironment.getMaximumWindowBounds();
@@ -309,6 +307,19 @@ JPanel panel;
 			}
 		});
 
+		ast.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0),"escape");
+		ast.getActionMap().put("escape", new AbstractAction()
+		{
+			
+			  @Override
+		        public void actionPerformed(ActionEvent e){
+		            ast.setVisible(false);
+		            panel.setVisible(true);
+		        }
+			
+		});
+		
+		
 		
 
 	}
@@ -335,26 +346,7 @@ JPanel panel;
 		
 	}
 	
-	@Override
-	public void keyPressed(KeyEvent e) {
-		if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
-			panel.setVisible(true);
-			panel_4.setVisible(false);
-	}
-}
-	@Override
-	public void keyReleased(KeyEvent k) {
-		if (k.getKeyCode() == KeyEvent.VK_ESCAPE) {
-			panel.setVisible(true);
-	}
-}
 	
-	
-	
-	@Override
-	public void keyTyped(KeyEvent k) {
-
-	}
 
 		
 	public static void main(String[] args) {
@@ -373,6 +365,10 @@ JPanel panel;
 			}
 			
 		});
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 }
