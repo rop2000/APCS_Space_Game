@@ -33,6 +33,7 @@ Graphics d;
 AsteroidMain ast = new AsteroidMain();
 JPanel panel_4;
 JPanel panel;
+JButton btnNewButton;
 	/**
 	 * Create the frame.
 	 */
@@ -117,7 +118,7 @@ JPanel panel;
 				ast.setVisible(true);
                 ast.setFocusable(true);
                 ast.requestFocus();
-                ast.requestFocusInWindow();
+            
 			}
 		});
 		
@@ -245,6 +246,26 @@ JPanel panel;
 		});
 			
 		
+		JButton btnPlay2 = new JButton("Play");
+		 btnPlay2.setFont(new Font("Tahoma", Font.BOLD, 30));
+		 btnPlay2.setBackground(new Color(220, 20, 60));
+		 btnPlay2.setForeground(new Color(0, 0, 139));
+		 btnPlay2.setBounds(570, 358, 332, 59);
+		panel.add(btnPlay2);
+		btnPlay2.setVisible(false);
+		 btnPlay2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				File f = new File("C:/Users/UltraParikh/workspace/Asteroids/src/AsteroidGame/Stranded.ser");
+				panel.setVisible(false);
+				ast.setVisible(true);
+                ast.setFocusable(true);
+                ast.requestFocus();
+            
+			}
+		});
+		
+		
+		
 		
 		JLabel lblByRohanParikh = new JLabel("");
 		lblByRohanParikh.setForeground(new Color(139, 0, 0));
@@ -315,6 +336,9 @@ JPanel panel;
 		        public void actionPerformed(ActionEvent e){
 		            ast.setVisible(false);
 		            panel.setVisible(true);
+		            btnNewButton.setVisible(false);
+		            btnPlay2.setVisible(true);
+		            
 		        }
 			
 		});

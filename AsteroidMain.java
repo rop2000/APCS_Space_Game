@@ -216,6 +216,12 @@ public class AsteroidMain extends JPanel implements Runnable, KeyListener {
 		}
 	}
 
+	public void destroy()
+	{
+		
+		
+	}
+	
 	private void deleteLaser(int index) {
 		numberOfLasers--;
 		for (int i = index; i < numberOfLasers; i++)
